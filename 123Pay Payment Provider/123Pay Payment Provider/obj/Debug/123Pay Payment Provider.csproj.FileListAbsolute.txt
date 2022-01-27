@@ -1,0 +1,9 @@
+c:\users\junnel gomez\documents\visual studio 2013\Projects\123Pay Payment Provider\123Pay Payment Provider\bin\Debug\123Pay Payment Provider.exe.config
+c:\users\junnel gomez\documents\visual studio 2013\Projects\123Pay Payment Provider\123Pay Payment Provider\obj\Debug\_123Pay_Payment_Provider.frmTransaction.resources
+c:\users\junnel gomez\documents\visual studio 2013\Projects\123Pay Payment Provider\123Pay Payment Provider\obj\Debug\_123Pay_Payment_Provider.Properties.Resources.resources
+c:\users\junnel gomez\documents\visual studio 2013\Projects\123Pay Payment Provider\123Pay Payment Provider\obj\Debug\123Pay Payment Provider.csproj.GenerateResource.Cache
+c:\users\junnel gomez\documents\visual studio 2013\Projects\123Pay Payment Provider\123Pay Payment Provider\obj\Debug\123Pay Payment Provider.exe.licenses
+c:\users\junnel gomez\documents\visual studio 2013\Projects\123Pay Payment Provider\123Pay Payment Provider\bin\Debug\123Pay Payment Provider.exe
+c:\users\junnel gomez\documents\visual studio 2013\Projects\123Pay Payment Provider\123Pay Payment Provider\bin\Debug\123Pay Payment Provider.pdb
+c:\users\junnel gomez\documents\visual studio 2013\Projects\123Pay Payment Provider\123Pay Payment Provider\obj\Debug\123Pay Payment Provider.exe
+c:\users\junnel gomez\documents\visual studio 2013\Projects\123Pay Payment Provider\123Pay Payment Provider\obj\Debug\123Pay Payment Provider.pdb

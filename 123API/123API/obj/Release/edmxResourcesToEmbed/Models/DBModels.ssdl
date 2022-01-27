@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Tbl_Accountinfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Male" Type="nvarchar" MaxLength="50" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="Date_Created" Type="datetime" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_TransactionInfo">
+    <Key>
+      <PropertyRef Name="TransactionCode" />
+    </Key>
+    <Property Name="TransactionCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account_No" Type="int" />
+    <Property Name="Account_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Merchant" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="Createddate" Type="datetime" />
+    <Property Name="Createdby" Type="varchar" MaxLength="50" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="Updatedby" Type="varchar" MaxLength="50" />
+    <Property Name="Documentinfo" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="Tbl_Accountinfo" EntityType="Self.Tbl_Accountinfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_TransactionInfo" EntityType="Self.Tbl_TransactionInfo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

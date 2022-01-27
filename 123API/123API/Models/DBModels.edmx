@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="Tbl_Accountinfo" EntityType="DBModel.Store.Tbl_Accountinfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_TransactionInfo" EntityType="DBModel.Store.Tbl_TransactionInfo" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Tbl_Accountinfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account_Name" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Male" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Balance" Type="decimal" Nullable="true" Precision="18" Scale="3" />
+    <Property Name="Date_Created" Type="datetime" Nullable="true" />
+    <Property Name="Created_By" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_TransactionInfo">
+    <Key>
+      <PropertyRef Name="TransactionCode" />
+    </Key>
+    <Property Name="TransactionCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account_No" Type="int" Nullable="true" />
+    <Property Name="Account_Name" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Merchant" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Nullable="true" Precision="18" Scale="3" />
+    <Property Name="Createddate" Type="datetime" Nullable="true" />
+    <Property Name="Createdby" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdatedDate" Type="datetime" Nullable="true" />
+    <Property Name="Updatedby" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Documentinfo" Type="varchar(max)" Nullable="true" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Accountinfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Male" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="Date_Created" Type="DateTime" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_TransactionInfo">
+          <Key>
+            <PropertyRef Name="TransactionCode" />
+          </Key>
+          <Property Name="TransactionCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account_No" Type="Int32" />
+          <Property Name="Account_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Merchant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="Createddate" Type="DateTime" Precision="3" />
+          <Property Name="Createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Updatedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Documentinfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Dbmodels" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Accountinfo" EntityType="Self.Tbl_Accountinfo" />
+          <EntitySet Name="Tbl_TransactionInfo" EntityType="Self.Tbl_TransactionInfo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="Dbmodels">
+    <EntitySetMapping Name="Tbl_Accountinfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.Tbl_Accountinfo)">
+        <MappingFragment StoreEntitySet="Tbl_Accountinfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Account_Name" ColumnName="Account_Name" />
+          <ScalarProperty Name="Male" ColumnName="Male" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Date_Created" ColumnName="Date_Created" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_TransactionInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.Tbl_TransactionInfo)">
+        <MappingFragment StoreEntitySet="Tbl_TransactionInfo">
+          <ScalarProperty Name="TransactionCode" ColumnName="TransactionCode" />
+          <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+          <ScalarProperty Name="Account_Name" ColumnName="Account_Name" />
+          <ScalarProperty Name="Merchant" ColumnName="Merchant" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Createddate" ColumnName="Createddate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="Updatedby" ColumnName="Updatedby" />
+          <ScalarProperty Name="Documentinfo" ColumnName="Documentinfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

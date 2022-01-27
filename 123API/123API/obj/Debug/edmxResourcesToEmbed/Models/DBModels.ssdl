@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="Tbl_Accountinfo" EntityType="DBModel.Store.Tbl_Accountinfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_TransactionInfo" EntityType="DBModel.Store.Tbl_TransactionInfo" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Tbl_Accountinfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account_Name" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Male" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Balance" Type="decimal" Nullable="true" Precision="18" Scale="3" />
+    <Property Name="Date_Created" Type="datetime" Nullable="true" />
+    <Property Name="Created_By" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_TransactionInfo">
+    <Key>
+      <PropertyRef Name="TransactionCode" />
+    </Key>
+    <Property Name="TransactionCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account_No" Type="int" Nullable="true" />
+    <Property Name="Account_Name" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Merchant" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Nullable="true" Precision="18" Scale="3" />
+    <Property Name="Createddate" Type="datetime" Nullable="true" />
+    <Property Name="Createdby" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdatedDate" Type="datetime" Nullable="true" />
+    <Property Name="Updatedby" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Documentinfo" Type="varchar(max)" Nullable="true" />
+  </EntityType>
+</Schema>
